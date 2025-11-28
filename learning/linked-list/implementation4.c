@@ -59,15 +59,14 @@ void reverse(struct Node **pt_head, struct Node *curr, struct Node *prev) {
   return;
 }
 
-void print(struct Node *head) {
-
-  if (head == NULL)
+void print(struct Node *curr) {
+  if (curr == NULL) {
+    printf("\n");
     return;
-
-  for (; head != NULL; head = head->next) {
-    printf("%d ", head->data);
   }
-  printf("\n");
+
+  printf("%d ", curr->data);
+  print(curr->next);
 }
 
 int main() {
